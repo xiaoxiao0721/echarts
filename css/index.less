@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #ffffff;
+    line-height: 1.15;
+    background: url(../images/bg.jpg) no-repeat top center;
+}
+
+@font-face {
+    font-family: electronicFont;
+    src: url(../font/DS-DIGIT.TTF);
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    height: 1.25rem;
+    background: url(../images/head_bg.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+
+    .tit {
+        display: inline-block;
+        position: absolute;
+        top: .25rem;
+        left: .325rem;
+    }
+
+    .time {
+        position: absolute;
+        right: .375rem;
+        top: .325rem;
+        font-size: .25rem;
+    }
+}
+
+
+.comtainer {
+    min-width: 1024px;
+    max-width: 1920px;
+    margin: 0 auto;
+    height: 100px;
+    padding: .125rem .125rem 0;
+    display: flex;
+
+    .left,
+    .right {
+        flex: 3;
+    }
+
+    .wrap {
+        flex: 5;
+    }
+
+    .panel {
+        position: relative;
+        height: 3.875rem;
+        padding: 0.1875rem 0.3rem;
+        margin-bottom: .1875rem;
+        border: 1px solid rgba(25, 186, 139, 0.17);
+        background: url(../images/line\(1\.png) rgba(255, 255, 255, .04);
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-left: 2px solid #00a8be;
+            border-top: 2px solid #00a8be;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid #00a8be;
+            border-top: 2px solid #00a8be;
+        }
+
+        .pannel-box {
+            width: 100%;
+            height: 0px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 10px;
+                height: 10px;
+                border-left: 2px solid #00a8be;
+                border-bottom: 2px solid #00a8be;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 10px;
+                height: 10px;
+                border-right: 2px solid #00a8be;
+                border-bottom: 2px solid #00a8be;
+            }
+        }
+
+        #echart1,#echart2,#echart3,#echart4,#echart5,#echart6,#map_chart{
+            width: 100%;
+            height: 100%;
+            // background: pink;
+        }
+    }
+
+    .wrap {
+        margin: 0 .125rem;
+
+        .number {
+            padding: .1875rem;
+            background: rgba(255, 255, 255, .1);
+
+            .topnum {
+                border: 1px solid rgba(25, 186, 139, 0.17);
+
+                ul {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 30px;
+                        height: 10px;
+                        border-left: 2px solid #00a8be;
+                        border-top: 2px solid #00a8be;
+                    }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        width: 30px;
+                        height: 10px;
+                        border-right: 2px solid #00a8be;
+                        border-bottom: 2px solid #00a8be;
+                    }
+                }
+
+                li {
+                    flex: 1;
+                    height: 1rem;
+                    font-size: .875rem;
+                    color: #fef07f;
+                    font-family: electronicFont;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 25%;
+                        right: 0;
+                        height: 50%;
+                        width: 1px;
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+
+                }
+            }
+
+            .detail {
+                ul {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: .125rem;
+
+                    li {
+                        flex: 1;
+                        font-size: .25rem;
+                    }
+                }
+            }
+        }
+
+        .map {
+            height: 10.125rem;
+            position: relative;
+            overflow: hidden;
+            .map1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 6.475rem;
+                width: 6.475rem;
+                opacity: .2;
+                background: url(../images/map.png) no-repeat;
+                background-size: 100% 100%;
+            }
+
+            .map2 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 8.0375rem;
+                width: 8.0375rem;
+                opacity: .2;
+                background: url(../images/lbx.png) no-repeat;
+                background-size: 100% 100%;
+                animation: rotate1 10s  linear infinite;
+            }
+            .map3 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 7.075rem;
+                width: 7.075rem;
+                opacity: .2;
+                background: url(../images/jt.png) no-repeat;
+                background-size: 100% 100%;
+                animation: rotate2 10s  linear infinite;
+            }
+            #map_chart{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 10.125rem;
+            }
+        }
+
+        @keyframes rotate1 {
+            from{
+                transform: translate(-50%, -50%)rotate(0deg);
+            }
+            to{
+                transform: translate(-50%, -50%)rotate(360deg);
+            }
+            
+        }
+        @keyframes rotate2 {
+            from{
+                transform: translate(-50%, -50%)rotate(0deg);
+            }
+            to{
+                transform: translate(-50%, -50%)rotate(-360deg);
+            }
+            
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+      font-size: 42px !important;
+    }
+  }
+  @media screen and (min-width: 1920) {
+    html {
+      font-size: 80px !important;
+    }
+  }

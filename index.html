@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <!-- 头部 -->
+  <header>
+    <h1 class="tit">Echarts-数据可视化</h1>
+    <div class="time"></div>
+  </header>
+  <!-- 主体 -->
+  <section class="comtainer">
+    <!-- 左 -->
+    <div class="left">
+      <div class="panel">
+        <div id="echart1"></div>
+        <div class="pannel-box"></div>
+      </div>
+      <div class="panel">
+        <div id="echart2"></div>
+        <div class="pannel-box"></div>
+      </div>
+      <div class="panel">
+        <div id="echart3"></div>
+        <div class="pannel-box"></div>
+      </div>
+    </div>
+    <!-- 中 -->
+    <div class="wrap">
+      <div class="number">
+          <div class="topnum">
+            <ul>
+              <li>2323411</li>
+              <li>434141</li>
+            </ul>
+          </div>
+          <div class="detail">
+            <ul>
+              <li>前端需求人数</li>
+              <li>市场供应人数</li>
+            </ul>
+          </div>
+      </div>
+      <div class="map">
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+          <div id="map_chart"></div>
+      </div>
+    </div>
+    <!-- 右 -->
+    <div class="right">
+      <div class="panel">
+        <div id="echart4"></div>
+        <div class="pannel-box"></div>
+      </div>
+      <div class="panel">
+        <div id="echart5"></div>
+        <div class="pannel-box"></div>
+      </div>
+      <div class="panel">
+        <div id="echart6"></div>
+        <div class="pannel-box"></div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // 设置当前时间
+      let timer = setTimeout(fnTime,1000)  //开始
+      function fnTime(){
+        clearTimeout(timer)   //清除定时器
+        let date = new Date()
+        let y = date.getFullYear()
+        let m = date.getMonth()+1
+        let d = date.getDate()
+        let h = date.getHours()
+        let min = date.getMinutes() 
+        let s = date.getSeconds()
+        document.querySelector('.time').innerHTML=  `当前时间：${y}年${m}月${d}日-${h}时${min}分${s}秒`
+
+        timer = setTimeout(fnTime,1000)   //循环调用
+      }
+  </script>
+  <!-- 配合rem实现大小自适应 -->
+  <script src="./js/flexible.js"></script>
+  <!-- 引入echarts -->
+  <script src="./js/echarts.js"></script>
+  <script src="./js/echarts-liquidfill.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/china.js"></script>
+
+  <script src="./js/chart.js"></script>
+</body>
+</html>
